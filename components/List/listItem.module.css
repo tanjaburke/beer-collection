@@ -1,0 +1,79 @@
+.card {
+  display: flex;
+  flex-direction: column;
+  margin: 15px 15px 0 0;
+  color: var(--primary-color);
+  text-decoration: none;
+  border: none;
+  background-color: transparent;
+  width: 200px;
+}
+
+.card p {
+  font-size: 13px;
+  width: 100%;
+}
+
+.cardImageWrapper {
+  display: flex;
+  background-color: rgb(240, 236, 226);
+  justify-content: center;
+  align-items: center;
+  padding: 15px
+}
+
+.cardImage {
+  height: 200px;
+  
+}
+
+.cardLabel {
+  font-weight: 100;
+  font-size: 11px;
+  color: #ffcb3b;
+  margin-bottom: 0;
+}
+
+.cardText {
+  margin-top: 5px;
+}
+
+.title {
+  font-weight: bold;
+  font-size: 14px;
+}
+
+.cardAddNew {
+  background-color: rgb(240, 236, 226);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.cardAddNewDottedLine {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 15px;
+  border: 1px dashed rgb(28, 54, 50, 0.5);
+  padding: 10px;
+  margin: 20px
+
+}
+
+.cardAddNewDottedLine span {
+  font-size: 30px;
+}
+
+.cardAddNewDottedLine p {
+  font-size: 14px;
+  margin-top: 5px;
+}
+
+@media only screen and (max-width: 600px) {
+  .card {
+    width: 45%;
+  }
+}

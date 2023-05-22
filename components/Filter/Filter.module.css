@@ -1,0 +1,118 @@
+.overlay {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+}
+
+.filter {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  width: 50%;
+  max-width: 600px;
+  min-width: 400px;
+  background-color: var(--primary-color);
+  padding: 0 15px;
+  display: flex;
+  color: white;
+  left: -200px;
+  animation: slide 0.5s forwards;
+}
+
+@keyframes slide {
+  100% {
+    left: 0;
+  }
+}
+
+.column {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.leftColumn {
+  min-width: 150px;
+}
+
+.rightColumn {
+  margin-left: 15px;
+  min-width: 150px;
+}
+
+.filterItem {
+  display: flex;
+  margin-bottom: 5px;
+}
+
+.filterButton {
+  border: none;
+  color: rgba(194, 194, 194, 0.8);
+  background-color: transparent;
+  font-size: 15px;
+  margin-bottom: 5px;
+}
+
+.selected {
+  color: rgb(255, 255, 255);
+  font-size: 20px;
+}
+
+.filterCheckbox {
+  margin-right: 10px;
+}
+
+.icon {
+  border: 1px solid white;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background-color: transparent;
+  color: white;
+  position: absolute;
+  right: 30px;
+  top: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.filterTitle {
+  margin-top: 30px;
+  margin-bottom: 50px;
+  line-height: 25px;
+  font-weight: normal;
+  font-family: Impact;
+}
+
+@media only screen and (max-width: 600px) {
+  .filter {
+    position: absolute;
+    min-width: unset;
+    width: calc(100% - 60px);
+    flex-direction: column;
+    padding: 0 30px;
+  }
+
+  .rightColumn {
+    margin-left: 0;
+  }
+
+  .leftColumn {
+    padding-bottom: 20px;
+    border-bottom: 1px solid var(--secondary-bg-color);
+  }
+
+  .filterButton {
+    padding: 0;
+  }
+
+  .filterTitle {
+    margin-top: 50px;
+    margin-bottom: 20px;
+  }
+}

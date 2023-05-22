@@ -1,0 +1,89 @@
+.detailItem {
+    display: flex;
+}
+
+.textWrapper {
+    width: 50%;
+    margin-right: 60px;
+    max-width: 450px
+}
+
+.title {
+    font-family: Impact;
+    font-size: 80px;
+    margin: 50px 0 10px 0;
+}
+
+.tagline {
+    font-weight: bold;
+    font-style: italic;
+    font-size: 30px;
+    margin: 0 0 10px 0
+}
+
+.imageWrapper {
+    display: flex;
+    background-color: var(--secondary-bg-color);
+    justify-content: center;
+    align-items: center;
+    padding: 15px;
+    width: 50%;
+    max-width: 500px;
+    position: relative;
+    max-height: 800px;
+    margin-top: 50px;
+}
+
+.image {
+    height: 100%;
+    width: auto;
+}
+
+.detailItem Image {
+    width: 40%;
+    max-width: 150px;
+    height: auto;
+}
+
+.text span {
+    font-size: 20px
+}
+
+@media only screen and (max-width: 600px) {
+    .detailItem {
+        flex-direction: column-reverse;
+    }
+
+    .imageWrapper {
+        width: calc(100% - 30px);
+        height: 300px;
+    }
+
+    .textWrapper {
+        width: 100%;
+    }
+    .title {
+        font-family: Impact;
+        font-size: 35px;
+        margin: 50px 0 10px 0;
+    }
+
+    .text {
+        font-size: 15px;
+    }
+    
+    .text span {
+        font-size: 16px
+    }
+
+    .tagline {
+        font-size: 20px;
+        font-weight: bold;
+        font-style: italic;
+    }
+}
+
+
+
+
+

@@ -1,0 +1,17 @@
+.titleWrapper {
+    margin-bottom: 50px;
+}
+
+.title {
+    font-size: 60px;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    margin: 0 30px
+}
+
+.subTitle {
+    font-size: 15px;
+    color: white;
+    margin: 5px 30px
+}
