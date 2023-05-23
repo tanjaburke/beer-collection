@@ -1,4 +1,4 @@
-# Technical assignment - Impact Commerce - Tanja Burke Cryer
+# Technical assignment - Tanja Burke Cryer
 
 ## Introduction
 
