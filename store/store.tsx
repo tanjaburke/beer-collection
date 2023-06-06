@@ -56,33 +56,24 @@ export const BeerCollectionContextProvider = (props: any) => {
   const [state, dispatch] = useReducer(filterParamsReducer, initialState);
 
   useEffect(() => {
+    //Check if data is available. Return if not.
     if (defaultData.length === 0) return;
-    if (
-      state.selectedYears.length === 0 &&
-      state.selectedTypes.length === 0 &&
-      state.name.length === 0 &&
-      sortParameter === ""
-    ) {
+
+    //get filtered Data
+    const filteredData = filterBeers(state, defaultData);
+
+    //check if base case
+    if (filteredData === defaultData && sortParameter === "") {
+      //tell application to use defaultData
       setIsFiltered(false);
       return;
     }
 
-    //check if Filter is on
-    const filteredData = filterBeers(state, defaultData);
-
-    if (filteredData) {
-      // Filters are applied
-      const data =
-        sortParameter !== "" ? filteredData.sort(sortMyArray) : filteredData;
-      setFilteredBeerCollection([...data]);
-      setIsFiltered(true);
-    } else {
-      // No filters, but we may need to sort
-      const sortedData =
-        sortParameter === "" ? defaultData : [...defaultData].sort(sortMyArray);
-      setDefaultData([...sortedData]);
-      setIsFiltered(false);
-    }
+    const data =
+      sortParameter !== "" ? filteredData.sort(sortMyArray) : filteredData;
+    setFilteredBeerCollection([...data]);
+    //tell application to use filteredData
+    setIsFiltered(true);
   }, [state, sortParameter, triggerSorting]);
 
   const sortMyArray = (a: BeerItem, b: BeerItem) => {

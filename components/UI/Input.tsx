@@ -13,7 +13,6 @@ type InputProps = {
 }
 
 export default function Input(props: InputProps) {
-  //Skriv ny context
   const inputCtx = useContext(InputContext)
   const [checked, setChecked] = useState<boolean>();
 
@@ -25,7 +24,6 @@ export default function Input(props: InputProps) {
     }
   }, [inputCtx.checkedInputBoxes])
 
-//Skriv ud af compoennt - clean component. 
   const toggle = () => {
     props.onChange();
     inputCtx.handleFilterInput(props.id)
@@ -39,7 +37,6 @@ export default function Input(props: InputProps) {
         checked={checked}
         onChange={toggle}
       />
-      {/* Skriv ud Husk */}
       <label className={styles.label} htmlFor={props.id}>{props.label}</label>
     </>
   );

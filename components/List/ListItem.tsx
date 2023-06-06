@@ -16,6 +16,7 @@ export default function ListItem(props: { beer: BeerItem }) {
           alt={props.beer.name}
         />
       </div>
+      <div className={styles.textWrapper}>
       <p>
         <span className={styles.title}>{props.beer.name}</span> -{" "}
         {props.beer.tagline}
@@ -23,6 +24,7 @@ export default function ListItem(props: { beer: BeerItem }) {
       <div>
         <p className={styles.cardLabel}>First Brewed</p>
         <p className={styles.cardText}>{props.beer.first_brewed}</p>
+      </div>
       </div>
     </Link>
   );

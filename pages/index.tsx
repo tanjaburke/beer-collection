@@ -5,7 +5,6 @@ import Hero from "@/components/UI/Hero";
 import List from "@/components/List/List";
 import SortWidget from "@/components/Sort/SortWidget";
 import FilterWidget from "@/components/Filter/FilterWidget";
-import PageTitle from "@/components/UI/PageTitle";
 import Filter from "@/components/Filter/Filter";
 import Modal from "@/components/Modal/Modal";
 import AddBottle from "@/components/AddBeer/AddBottle";
@@ -19,6 +18,7 @@ import ModalContext from "@/store/modalStore";
 import styles from "./LandingPage.module.css";
 
 import useBodyScrollLock from "@/hooks/bodyScrollLock";
+import Count from "@/components/List/Count";
 type SortParam = keyof BeerItem;
 
 export default function Home(props: { beers: BeerItem[] }) {
@@ -27,16 +27,15 @@ export default function Home(props: { beers: BeerItem[] }) {
   const sortingValues: SortParam[] = ["id", "name", "first_brewed"];
   const [filterIsOpen, setFilterIsOpen] = useState<boolean>();
   const [isLoaded, setIsLoaded] = useState<boolean>(false);
-  let rootFilterElement: Element;
-  const {toggle} = useBodyScrollLock();
+  // let rootFilterElement: Element;
+  const { toggle } = useBodyScrollLock();
 
   useEffect(() => {
     ctx.setDefaultData([...props.beers]);
     setIsLoaded(true);
   }, []);
 
-  useEffect(() => {
-  }, [modalCtx.isModalOpen]);
+  useEffect(() => {}, [modalCtx.isModalOpen]);
 
   const closeFilter = () => {
     setFilterIsOpen(false);
@@ -50,11 +49,6 @@ export default function Home(props: { beers: BeerItem[] }) {
     <main className="main-wrapper">
       <Hero url="/landing-page.jpg">
         <Logo />
-        <PageTitle
-          wordSplit={false}
-          title="MY BEER COLLECTION"
-          subTitle={`Your collection counts ${ctx.defaultData.length} bottles`}
-        />
       </Hero>
 
       {isLoaded && filterIsOpen
@@ -83,6 +77,7 @@ export default function Home(props: { beers: BeerItem[] }) {
         </div>
 
         <article>
+          <Count/>
           <List></List>
         </article>
       </section>

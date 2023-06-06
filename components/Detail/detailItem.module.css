@@ -4,7 +4,7 @@
 
 .textWrapper {
     width: 50%;
-    margin-right: 60px;
+    margin: var(--box-margin) var(--box-margin) 0 0;
     max-width: 450px
 }
 
@@ -28,15 +28,16 @@
     align-items: center;
     padding: 15px;
     width: 50%;
-    max-width: 500px;
+    max-width: 400px;
     position: relative;
-    max-height: 800px;
+    max-height: 500px;
     margin-top: 50px;
 }
 
 .image {
     height: 100%;
     width: auto;
+    margin: 30px;
 }
 
 .detailItem Image {
@@ -62,6 +63,7 @@
     .textWrapper {
         width: 100%;
     }
+
     .title {
         font-family: Impact;
         font-size: 35px;

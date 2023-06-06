@@ -2,25 +2,14 @@ import React from "react";
 
 import styles from "./PageTitle.module.css";
 
-export default function PageTitle(props: {
-  wordSplit: boolean;
-  title: string;
-  subTitle?: string;
-}) {
-  
+export default function PageTitle(props: { title: string; color: string }) {
   const words = props.title?.split(" ");
 
-  return (
-    <article className={styles.titleWrapper}>
-      {props.wordSplit ? (
-        <h1 className={styles.title}>
-          {words!.map((word, i) => {
-            return <span key={i}>{word}</span>;
-          })}
-        </h1>
-      ) : <h1 className={styles.title}>{props.title}</h1>}
+  const getColor = () => {
+    if (props.color === "primary") return styles.primary;
+    else return styles.white;
+  };
 
-      <p className={styles.subTitle}>{props.subTitle}</p>
-    </article>
-  );
+  return <h1 className={`${getColor()} ${styles.title}`}>{props.title}</h1>
+
 }

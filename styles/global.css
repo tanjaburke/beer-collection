@@ -5,6 +5,19 @@
   --primary-bg-color: rgb(250, 247, 239);
   --secondary-bg-color: rgb(240, 236, 226);
   --alert: rgb(182, 137, 15);
+
+  /* Layout */
+  --box-margin: 50px;
+  --gap-margin: 25px;
+  --box-margin-mobile: 30px;
+  --gap-margin-mobile: 15px;
+  --box-padding: 50px;
+  --gap-padding: 25px;
+  --small-padding: 15px;
+  --box-padding-mobile: 30px;
+  --gap-padding-mobile: 15px;
+  --small-padding-mobile: 10px;
+
 }
 
 body {
@@ -53,6 +66,10 @@ h3,
 h4 {
   font-family: Impact;
   font-weight: normal;
+}
+
+.hero .logo {
+  height: 50%
 }
 
 @media only screen and (max-width: 600px) {

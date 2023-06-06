@@ -1,17 +1,27 @@
 .titleWrapper {
-    margin-bottom: 50px;
+    /* margin-bottom: 50px; */
+    z-index: 1;
 }
 
 .title {
     font-size: 60px;
-    color: white;
+    /* color: white; */
     display: flex;
     flex-direction: column;
-    margin: 0 30px
+    margin: 0;
+    /* margin: 0 30px */
 }
 
 .subTitle {
     font-size: 15px;
-    color: white;
-    margin: 5px 30px
+    /* color: white; */
+    /* margin: 5px 30px */
+}
+
+.primary {
+    color: var(--primary-color);
+}
+
+.white {
+    color: white
 }

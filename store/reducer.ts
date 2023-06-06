@@ -5,6 +5,9 @@ export default function filterParamsReducer(
     action: FilterAction
   ): SelectedValues {
     const { type, payload } = action;
+    //If type is SELECT_YEAR or SELECT_TYPE, check if payload is being added or removed from filter.
+    //On change to the entered name (SELECT_NAME), replace old value with payload.
+    //If type is CLEAR_FILTER reset filter to base case.
     if (type === "SELECT_YEAR" && state.selectedYears!.includes(payload)) {
       return {
         selectedYears: state.selectedYears!.filter((year) => year !== payload),

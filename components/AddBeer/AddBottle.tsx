@@ -107,7 +107,7 @@ export default function AddBottle(props: { title: string }) {
             ) : (
               null
             )}
-            <DetailItem {...selectedItem}></DetailItem>{" "}
+            <DetailItem {...selectedItem}></DetailItem>
             <button
               className={`green-button button ${styles.addButton}`}
               onClick={addBottle}

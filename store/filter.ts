@@ -18,17 +18,13 @@ export default function filterBeers(filterParameters: SelectedValues, collection
             if (selectedTypes.length === 0) 
                 return true;
             // Test if any of the selected types are part of the description or the name
-            const nameIncludes = selectedTypes.map(beerType => beer.name.toLowerCase().includes(beerType.toLowerCase()));
-            const typeIncludes = selectedTypes.map(beerType => beer.description.toLowerCase().includes(beerType.toLowerCase()));
-
-            return [...nameIncludes, ...typeIncludes].some(isFilterTrue => isFilterTrue);
+            return selectedTypes.some(beerType => beer.name.toLowerCase().includes(beerType.toLowerCase()) || beer.description.toLowerCase().includes(beerType.toLowerCase())) 
         })
         .filter(beer => {
             if (selectedYears.length === 0)
                 return true;
             // Test if the "first_brewed" date includes any of the year filters
-            const yearIncludes = selectedYears.map(year => beer.first_brewed.toLowerCase().includes(year.toLowerCase()));
-            return yearIncludes.some(isFilterTrue => isFilterTrue);
+            return selectedYears.some(year => beer.first_brewed.toLowerCase().includes(year.toLowerCase()));
         })
 
     return results;
